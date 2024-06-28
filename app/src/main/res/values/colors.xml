@@ -6,4 +6,43 @@
     <color name="light_blue_200">#FF81D4FA</color>
     <color name="light_blue_600">#FF039BE5</color>
     <color name="light_blue_900">#FF01579B</color>
+
+    <color name="primary_text_color">#2E2E2E</color>
+    <color name="card_view_color">#EFEFEF</color>
+    <color name="device_control_switch_disable_thumb">#eaeaea</color>
+    <color name="fi_info_text_color">#6996f9</color>
+    <color name="device_control_switch_track">#505050</color>
+    <color name="device_control_switch_thumb_on_start">#6AA5F4</color>
+    <color name="device_control_switch_thumb_on_center">#6C8FF6</color>
+    <color name="device_control_switch_thumb_on_end">#7070FA</color>
+    <color name="device_control_switch_thumb_on_border_start">#6AA5F4</color>
+    <color name="device_control_switch_thumb_on_border_end">#7070FA</color>
+    <color name="device_control_switch_off_thumb">#7B7B7B</color>
+    <color name="device_control_switch_off_thumb_border">#383838</color>
+    <color name="device_controls_header_text_color_enabled">#454545</color>
+    <color name="ac_generic_text_enabled_color">#454545</color>
+
+    <!--AC colors temperature-->
+    <color name="ac_low">#FF77D5FF</color>
+    <color name="ac_low_mid">#FF5865E0</color>
+    <color name="ac_mid">#FF946AF4</color>
+    <color name="ac_mid_high">#FF946AF4</color>
+    <color name="ac_high">#FFFF7777</color>
+
+    <!--Fan colors temperature-->
+    <color name="fan_low">#20496CDE</color>
+    <color name="fan_low_mid">#40496CDE</color>
+    <color name="fan_mid">#60496CDE</color>
+    <color name="fan_mid_high">#CC496CDE</color>
+    <color name="fan_high">#FF496CDE</color>
+
+    <!--Washing Machine colors temperature-->
+    <color name="wm_progress">#FFC7A073</color>
+
+    <!--Water Heater colors temperature-->
+    <color name="wh_low">#FF4CD6DF</color>
+    <color name="wh_low_mid">#FF4CD6DF</color>
+    <color name="wh_mid">#FF8B5dE7</color>
+    <color name="wh_mid_high">#FFF88D8E</color>
+    <color name="wh_high">#FF981819</color>
 </resources>
