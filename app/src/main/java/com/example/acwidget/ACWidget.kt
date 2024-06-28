@@ -97,17 +97,18 @@ class ACWidget : AppWidgetProvider() {
         views.setImageViewResource(R.id.knob_status_icn, getACModeIcon(mode)) // You may need to update this based on the mode
 
         // Set the Button state
-//        views.setTextViewText(R.id.btnPower, if (isPowerOn) "On" else "Off")
-//        views.setInt(
-//            R.id.btnPower,
-//            "setBackgroundResource",
-//            if (isPowerOn) R.drawable.button_background_enabled else R.drawable.button_background_disabled
-//        )
+        views.setTextViewText(R.id.btnPower, if (isPowerOn) "On" else "Off")
+        views.setInt(
+            R.id.btnPower,
+            "setBackgroundResource",
+            if (isPowerOn) R.drawable.button_background_enabled else R.drawable.button_background_disabled
+        )
 
         // Set up intent for Button
         views.setOnClickPendingIntent(R.id.rl_circular_widget, getModeTogglePendingIntent(context, appWidgetId))
-	    views.setCompoundButtonChecked(R.id.device_switch, isPowerOn)
-    	views.setOnCheckedChangeResponse(R.id.device_switch, RemoteViews.RemoteResponse.fromPendingIntent(getPowerTogglePendingIntent(context, appWidgetId)))
+        views.setOnClickPendingIntent(R.id.btnPower, getPowerTogglePendingIntent(context, appWidgetId))
+	   // views.setCompoundButtonChecked(R.id.device_switch, isPowerOn)
+    	//views.setOnCheckedChangeResponse(R.id.device_switch, RemoteViews.RemoteResponse.fromPendingIntent(getPowerTogglePendingIntent(context, appWidgetId)))
 
         appWidgetManager.updateAppWidget(appWidgetId, views)
         Log.d(TAG, "Widget updated: Power ${if (isPowerOn) "On" else "Off"}, Temp: $temperature, Mode: ${modes[modeIndex]}")
