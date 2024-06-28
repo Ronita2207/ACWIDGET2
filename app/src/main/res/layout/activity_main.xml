@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="16dp">
+
+    <TextView
+        android:id="@+id/tvPowerStatus"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentStart="true"
+        android:text="Power: OFF"
+        android:textSize="18sp"/>
+
+    <TextView
+        android:id="@+id/tvTemperature"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/tvPowerStatus"
+        android:layout_marginTop="16dp"
+        android:text="Temperature: 24°C"
+        android:textSize="18sp"/>
+
+    <Button
+        android:id="@+id/btnDecreaseTemp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/tvTemperature"
+        android:layout_alignParentStart="true"
+        android:text="-"/>
+
+    <Button
+        android:id="@+id/btnIncreaseTemp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/tvTemperature"
+        android:layout_toEndOf="@id/btnDecreaseTemp"
+        android:text="+"/>
+
+    <TextView
+        android:id="@+id/tvMode"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/btnDecreaseTemp"
+        android:layout_marginTop="16dp"
+        android:text="Mode: Auto"
+        android:textSize="18sp"/>
+
+    <Button
+        android:id="@+id/btnChangeMode"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/tvMode"
+        android:text="Change Mode"/>
+
+    <Button
+        android:id="@+id/btnTogglePower"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/btnChangeMode"
+        android:layout_marginTop="16dp"
+        android:text="Toggle Power"/>
+
+</RelativeLayout>
