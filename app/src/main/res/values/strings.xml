@@ -3,4 +3,19 @@
     <string name="appwidget_text">EXAMPLE</string>
     <string name="add_widget">Add widget</string>
     <string name="app_widget_description">This is an app widget description</string>
+
+    <string name="font_montserrat_bold" translatable="false">"fonts/Montserrat-Bold.ttf"</string>
+    <string name="font_montserrat_medium" translatable="false">"fonts/Montserrat-Medium.ttf"</string>
+    <string name="font_montserrat_regular" translatable="false">"fonts/Montserrat-Regular.ttf"</string>
+    <string name="font_montserrat_light" translatable="false">"fonts/Montserrat-Light.ttf"</string>
+    <string name="font_montserrat_semi_bold" translatable="false">"fonts/Montserrat-SemiBold.ttf"</string>
+
+    <string name="ac_control_evaporator_clean_label">CL</string>
+
+    <!-- AC Mode -->
+    <string name="ac_mode_dry">Dry</string>
+    <string name="ac_mode_cool">Cool</string>
+    <string name="ac_mode_auto">Auto</string>
+    <string name="ac_mode_fan">Fan</string>
+
 </resources>

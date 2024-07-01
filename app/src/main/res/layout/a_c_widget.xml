@@ -1,65 +1,164 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:layout_width="match_parent"
-    android:layout_height="240dp"
-    android:layout_margin="8dp"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="@dimen/default_width"
+    android:layout_height="@dimen/default_height"
+    android:layout_margin="@dimen/unit_8"
     android:background="@drawable/widget_bg"
-    android:elevation="3dp"
-    android:padding="16dp">
-
-    <TextView
-        android:id="@+id/tvTemperature"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentTop="true"
-        android:text="24°C"
-        android:textColor="@android:color/black"
-        android:textSize="24sp" />
+    android:elevation="@dimen/unit_2"
+    android:padding="@dimen/unit_10"
+    tools:ignore="MissingPrefix">
 
     <RelativeLayout
-        android:id="@+id/thermostatDial"
-        android:layout_width="200dp"
-        android:layout_height="200dp"
-        android:layout_alignParentEnd="true">
-
-        <ImageView
-            android:id="@+id/ivDial"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:scaleType="fitCenter"
-            android:src="@drawable/dial_background" />
-
-        <ImageView
-            android:id="@+id/ivMode"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_above="@id/tvMode"
-            android:layout_centerInParent="true"
-            android:src="@drawable/ic_mode"
-            app:tint="@android:color/black" />
+        android:id="@+id/ac_temp_container"
+        android:layout_width="@dimen/ac_temp_container_width"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="false">
 
         <TextView
-            android:id="@+id/tvMode"
+            android:id="@+id/tv_temperature_value"
+            fontPath="@string/font_montserrat_bold"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:gravity="center|start"
+            android:text="24"
+            android:textColor="@color/device_controls_header_text_color_enabled"
+            android:textSize="@dimen/text_26" />
+
+        <!--        <com.robinhood.ticker.TickerView-->
+        <!--            android:id="@+id/tv_temperature_value"-->
+        <!--            fontPath="@string/font_montserrat_bold"-->
+        <!--            android:layout_width="wrap_content"-->
+        <!--            android:layout_height="wrap_content"-->
+        <!--            android:gravity="center|left"-->
+        <!--            android:text=""-->
+        <!--            android:textColor="@color/device_controls_header_text_color_enabled"-->
+        <!--            android:textSize="26sp"-->
+        <!--            android:textStyle="bold" />-->
+
+        <TextView
+            android:id="@+id/ac_controls_temp_unit_text"
+            fontPath="@string/font_montserrat_light"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toEndOf="@+id/tv_temperature_value"
+            android:enabled="false"
+            android:gravity="center"
+            android:paddingBottom="@dimen/unit_15"
+            android:text="\u2103"
+            android:textColor="@color/ac_generic_text_enabled_color"
+            android:textSize="@dimen/unit_18" />
+
+        <TextView
+            android:id="@+id/ac_controls_alt_temp_label"
+            fontPath="@string/font_montserrat_bold"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toEndOf="@+id/tv_temperature_value"
+            android:enabled="false"
+            android:gravity="center|start"
+            android:text="@string/ac_control_evaporator_clean_label"
+            android:textColor="@color/device_controls_header_text_color_enabled"
+            android:textSize="@dimen/ac_controls_alt_temp_text_size"
+            android:visibility="gone" />
+    </RelativeLayout>
+
+    <!--    <com.example.acwidget.CircularSeekBar-->
+    <!--        android:id="@+id/circularSeekBar1"-->
+    <!--        android:layout_width="@dimen/unit_190"-->
+    <!--        android:layout_height="@dimen/unit_190"-->
+    <!--        android:layout_centerVertical="true"-->
+    <!--        android:layout_alignParentEnd="true"-->
+    <!--        android:alpha="0.9"-->
+    <!--        android:rotation="90"-->
+    <!--        android:visibility="gone"-->
+    <!--        app:end_angle="270"-->
+    <!--        app:start_angle="270" />-->
+
+    <RelativeLayout
+        android:id="@+id/rl_circular_widget"
+        android:layout_width="@dimen/unit_190"
+        android:layout_height="@dimen/unit_190"
+        android:layout_alignParentEnd="true"
+        android:clickable="true">
+
+        <ImageView
+            android:id="@+id/iv_outer"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
             android:layout_centerInParent="true"
-            android:text="Auto"
-            android:textColor="@android:color/black"
-            android:textSize="18sp" />
+            android:src="@drawable/ac_outer" />
+
+        <ImageView
+            android:id="@+id/iv_knob_button"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_centerInParent="true"
+            android:layout_margin="@dimen/unit_30"
+            android:background="@drawable/acwidget_selector"
+            android:visibility="visible" />
+
+        <LinearLayout
+            android:id="@+id/ll_mode_control"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:orientation="vertical">
+
+            <ImageView
+                android:id="@+id/knob_status_icn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:layout_gravity="center_horizontal" />
+
+            <TextView
+                android:id="@+id/knob_value_tv"
+                fontPath="@string/font_montserrat_bold"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/unit_5"
+                android:gravity="center_horizontal"
+                android:text=""
+                android:textColor="@color/primary_text_color"
+                android:textSize="@dimen/ac_mode_text_size" />
+        </LinearLayout>
 
     </RelativeLayout>
 
-    <Button
-        android:id="@+id/btnPower"
+    <ImageView
+        android:id="@+id/iv_power_switch"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentStart="true"
         android:layout_alignParentBottom="true"
-        android:layout_marginTop="16dp"
-        android:background="@drawable/button_background"
-        android:text="Off"
-        android:textColor="@android:color/white" />
+        android:layout_marginBottom="@dimen/unit_5"
+        android:background="@drawable/ic_toggle_off"
+        android:clickable="true"/>
+
+<!--    <Button-->
+<!--        android:id="@+id/btnPower"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_alignParentStart="true"-->
+<!--        android:layout_alignParentBottom="true"-->
+<!--        android:layout_marginTop="16dp"-->
+<!--        android:background="@drawable/button_background"-->
+<!--        android:text="Off"-->
+<!--        android:textColor="@android:color/white"-->
+<!--        android:visibility="gone"/>-->
+
+    <!--    <Switch-->
+    <!--        android:id="@+id/device_switch"-->
+    <!--        android:layout_width="wrap_content"-->
+    <!--        android:layout_height="wrap_content"-->
+    <!--        android:layout_alignParentStart="true"-->
+    <!--        android:layout_alignParentBottom="true"-->
+    <!--        android:layout_gravity="bottom"-->
+    <!--        android:layout_marginBottom="@dimen/unit_5"-->
+    <!--        android:checked="false"-->
+    <!--        android:thumb="@drawable/custom_switch_thumb"-->
+    <!--        app:track="@drawable/custom_switch_track" />-->
 
 </RelativeLayout>

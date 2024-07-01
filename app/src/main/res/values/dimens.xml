@@ -7,4 +7,25 @@ http://developer.android.com/guide/topics/appwidgets/index.html#CreatingLayout
     -->
     <dimen name="widget_margin">0dp</dimen>
 
+    <dimen name="unit_2">2dp</dimen>
+    <dimen name="unit_5">5dp</dimen>
+    <dimen name="unit_8">8dp</dimen>
+    <dimen name="unit_10">10dp</dimen>
+    <dimen name="unit_15">15dp</dimen>
+    <dimen name="unit_16">16dp</dimen>
+    <dimen name="unit_18">18dp</dimen>
+    <dimen name="unit_30">30dp</dimen>
+    <dimen name="unit_190">190dp</dimen>
+
+
+    <dimen name="text_26">26sp</dimen>
+
+
+    <dimen name="default_width">300dp</dimen>
+    <dimen name="default_height">200dp</dimen>
+
+    <dimen name="ac_temp_container_width">60dp</dimen>
+    <dimen name="ac_controls_alt_temp_text_size">26sp</dimen>
+    <dimen name="ac_mode_text_size">10sp</dimen>
+
 </resources>
