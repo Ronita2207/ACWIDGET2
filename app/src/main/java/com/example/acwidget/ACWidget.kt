@@ -97,17 +97,23 @@ class ACWidget : AppWidgetProvider() {
         views.setImageViewResource(R.id.knob_status_icn, getACModeIcon(mode)) // You may need to update this based on the mode
 
         // Set the Button state
-        views.setTextViewText(R.id.btnPower, if (isPowerOn) "On" else "Off")
+//        views.setTextViewText(R.id.btnPower, if (isPowerOn) "On" else "Off")
+//        views.setInt(
+//            R.id.btnPower,
+//            "setBackgroundResource",
+//            if (isPowerOn) R.drawable.button_background_enabled else R.drawable.button_background_disabled
+//        )
         views.setInt(
-            R.id.btnPower,
+            R.id.iv_power_switch,
             "setBackgroundResource",
-            if (isPowerOn) R.drawable.button_background_enabled else R.drawable.button_background_disabled
+            if (isPowerOn) R.drawable.ic_toggle_on else R.drawable.ic_toggle_off
         )
 
         // Set up intent for Button
         views.setOnClickPendingIntent(R.id.rl_circular_widget, getModeTogglePendingIntent(context, appWidgetId))
-        views.setOnClickPendingIntent(R.id.btnPower, getPowerTogglePendingIntent(context, appWidgetId))
-	   // views.setCompoundButtonChecked(R.id.device_switch, isPowerOn)
+//        views.setOnClickPendingIntent(R.id.btnPower, getPowerTogglePendingIntent(context, appWidgetId))
+        views.setOnClickPendingIntent(R.id.iv_power_switch, getPowerTogglePendingIntent(context, appWidgetId))
+        // views.setCompoundButtonChecked(R.id.device_switch, isPowerOn)
     	//views.setOnCheckedChangeResponse(R.id.device_switch, RemoteViews.RemoteResponse.fromPendingIntent(getPowerTogglePendingIntent(context, appWidgetId)))
 
         appWidgetManager.updateAppWidget(appWidgetId, views)
