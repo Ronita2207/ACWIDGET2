@@ -2,19 +2,20 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="@dimen/default_width"
-    android:layout_height="@dimen/default_height"
-    android:layout_margin="@dimen/unit_8"
+    android:layout_width="240dp"
+    android:layout_height="160dp"
+    android:layout_margin="@dimen/unit_5"
     android:background="@drawable/widget_bg"
     android:elevation="@dimen/unit_2"
-    android:padding="@dimen/unit_10"
+    android:padding="@dimen/unit_8"
     tools:ignore="MissingPrefix">
 
     <RelativeLayout
         android:id="@+id/ac_temp_container"
-        android:layout_width="@dimen/ac_temp_container_width"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_centerVertical="false">
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true">
 
         <TextView
             android:id="@+id/tv_temperature_value"
@@ -24,18 +25,7 @@
             android:gravity="center|start"
             android:text="24"
             android:textColor="@color/device_controls_header_text_color_enabled"
-            android:textSize="@dimen/text_26" />
-
-        <!--        <com.robinhood.ticker.TickerView-->
-        <!--            android:id="@+id/tv_temperature_value"-->
-        <!--            fontPath="@string/font_montserrat_bold"-->
-        <!--            android:layout_width="wrap_content"-->
-        <!--            android:layout_height="wrap_content"-->
-        <!--            android:gravity="center|left"-->
-        <!--            android:text=""-->
-        <!--            android:textColor="@color/device_controls_header_text_color_enabled"-->
-        <!--            android:textSize="26sp"-->
-        <!--            android:textStyle="bold" />-->
+            android:textSize="22sp" />
 
         <TextView
             android:id="@+id/ac_controls_temp_unit_text"
@@ -45,10 +35,10 @@
             android:layout_toEndOf="@+id/tv_temperature_value"
             android:enabled="false"
             android:gravity="center"
-            android:paddingBottom="@dimen/unit_15"
+            android:paddingBottom="@dimen/unit_10"
             android:text="\u2103"
             android:textColor="@color/ac_generic_text_enabled_color"
-            android:textSize="@dimen/unit_18" />
+            android:textSize="14sp" />
 
         <TextView
             android:id="@+id/ac_controls_alt_temp_label"
@@ -64,23 +54,12 @@
             android:visibility="gone" />
     </RelativeLayout>
 
-    <!--    <com.example.acwidget.CircularSeekBar-->
-    <!--        android:id="@+id/circularSeekBar1"-->
-    <!--        android:layout_width="@dimen/unit_190"-->
-    <!--        android:layout_height="@dimen/unit_190"-->
-    <!--        android:layout_centerVertical="true"-->
-    <!--        android:layout_alignParentEnd="true"-->
-    <!--        android:alpha="0.9"-->
-    <!--        android:rotation="90"-->
-    <!--        android:visibility="gone"-->
-    <!--        app:end_angle="270"-->
-    <!--        app:start_angle="270" />-->
-
     <RelativeLayout
         android:id="@+id/rl_circular_widget"
-        android:layout_width="@dimen/unit_190"
-        android:layout_height="@dimen/unit_190"
+        android:layout_width="120dp"
+        android:layout_height="120dp"
         android:layout_alignParentEnd="true"
+        android:layout_centerVertical="true"
         android:clickable="true">
 
         <ImageView
@@ -95,7 +74,7 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_centerInParent="true"
-            android:layout_margin="@dimen/unit_30"
+            android:layout_margin="@dimen/unit_18"
             android:background="@drawable/acwidget_selector"
             android:visibility="visible" />
 
@@ -110,7 +89,6 @@
                 android:id="@+id/knob_status_icn"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_centerInParent="true"
                 android:layout_gravity="center_horizontal" />
 
             <TextView
@@ -118,7 +96,7 @@
                 fontPath="@string/font_montserrat_bold"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/unit_5"
+                android:layout_marginTop="@dimen/unit_2"
                 android:gravity="center_horizontal"
                 android:text=""
                 android:textColor="@color/primary_text_color"
@@ -130,25 +108,15 @@
     <Button
         android:id="@+id/btnPower"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_height="32dp"
         android:layout_alignParentStart="true"
         android:layout_alignParentBottom="true"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="@dimen/unit_8"
         android:background="@drawable/button_background"
         android:text="Off"
         android:textColor="@android:color/white"
-         />
+        android:textSize="12sp" />
 
-<!--    <Switch-->
-<!--        android:id="@+id/device_switch"-->
-<!--        android:layout_width="wrap_content"-->
-<!--        android:layout_height="wrap_content"-->
-<!--        android:layout_alignParentStart="true"-->
-<!--        android:layout_alignParentBottom="true"-->
-<!--        android:layout_gravity="bottom"-->
-<!--        android:layout_marginBottom="@dimen/unit_5"-->
-<!--        android:checked="false"-->
-<!--        android:thumb="@drawable/custom_switch_thumb"-->
-<!--        app:track="@drawable/custom_switch_track" />-->
+    <!-- Commented Switch remains unchanged -->
 
 </RelativeLayout>
